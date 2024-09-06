@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain.RepositoryContracts
 {
-    public interface IUniteOfWork
+    public interface IRepository<T> where T :class
     {
-        public IRepository<T> Repository<T>() where T:class;
-        public void Commit();
     }
 }
