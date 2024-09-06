@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.RepositoryContracts
+namespace Domain.Entities
 {
-    public interface IRepository<T> where T :class
+    public class Order:BaseEntity
     {
+        public string name { get; set; }
     }
 }

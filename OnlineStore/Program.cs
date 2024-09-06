@@ -1,5 +1,6 @@
 
 using Application;
+using Application.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace OnlineStore
@@ -11,7 +12,7 @@ namespace OnlineStore
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-
+            builder.Services.AddScoped<IUniteOfWork,UniteOfWork>();
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();

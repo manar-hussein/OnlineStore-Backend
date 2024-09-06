@@ -1,3 +1,4 @@
+using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace OnlineStore.Controllers
@@ -10,12 +11,14 @@ namespace OnlineStore.Controllers
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
+        private readonly IUniteOfWork _uniteOfWork;
 
         private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, IUniteOfWork uniteOfWork)
         {
             _logger = logger;
+            _uniteOfWork = uniteOfWork;
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
@@ -28,6 +31,12 @@ namespace OnlineStore.Controllers
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+
+        [HttpGet("All")]
+        public IActionResult Get(int id) {
+          var order=_uniteOfWork.Repository<Order>().GetById(id);
+            return Ok(order);
         }
     }
 }
