@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application
+namespace Domain.Entities
 {
-    internal class Repository<T> where T : class
+    public class BaseEntity
     {
+        public int Id { get; set; }
+
     }
 }

@@ -7,11 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.8" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Entities\" />
+=======
+    <Folder Include="Configurations\" />
+    <Folder Include="DTOS\" />
+>>>>>>> f4a11203f5a2ce0f587e17131d4ba2003e918148
   </ItemGroup>
 
 </Project>
