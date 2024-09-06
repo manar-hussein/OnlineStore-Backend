@@ -1,4 +1,6 @@
 //
+
+using Application.Interfaces;
 using Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
