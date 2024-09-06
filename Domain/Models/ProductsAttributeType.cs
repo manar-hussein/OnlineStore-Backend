@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.RepositoryContracts
+namespace Domain.Models
 {
-    internal interface IUniteOfWork
+    public enum ProductsAttributeType
     {
+       Color,
+       Size
     }
 }

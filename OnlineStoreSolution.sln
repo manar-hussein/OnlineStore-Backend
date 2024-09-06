@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStore", "OnlineStore\OnlineStore.csproj", "{2A25D3F2-4784-4795-A509-C1B8B5C04442}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineStore", "OnlineStore\OnlineStore.csproj", "{2A25D3F2-4784-4795-A509-C1B8B5C04442}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{3AE44689-B507-47AC-99B8-839BCCC74903}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{3AE44689-B507-47AC-99B8-839BCCC74903}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{54DBBF8D-81CE-46AB-A5D0-014AE4E702F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{54DBBF8D-81CE-46AB-A5D0-014AE4E702F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{DCDBA6A8-FB48-40B7-A66C-32FABCBD369A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{DCDBA6A8-FB48-40B7-A66C-32FABCBD369A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
