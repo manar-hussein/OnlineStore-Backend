@@ -1,4 +1,5 @@
 ﻿
+//
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Models
 {
-    public class OrderDetails
+    public class OrderDetails : BaseEntity
     {
         [Key]
         public int Id { get; set; }
@@ -18,9 +19,12 @@ namespace Domain.Models
         public int  UserId { get; set; }
         public User? User { get; set; } 
 
+        
         [ForeignKey("Payment")]
         public int  PaymentId { get; set; }
         public PaymentDetails? Payment {  get; set; }
+
+        public ICollection<OrderItem> OrderItems {  get; set; }
 
         [Column(TypeName = "decimal(18,2)")]
         public decimal Total { get; set; }

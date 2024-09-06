@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualBasic;
+﻿using Domain.Entities;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -9,19 +10,19 @@ using System.Threading.Tasks;
 
 namespace Domain.Models
 {
-    public class Cart
+    public class Cart : BaseEntity
     {
         [Key]
         public int Id { get; set; }
 
         [ForeignKey("User")]
         public int UserId { get; set; }
+        public User? User { get; set; }
 
 
         [Column(TypeName = "decimal(18,2)")]
         public decimal Total { get; set; }
 
-        public  User? User { get; set; }
         public  ICollection<CartItem>? CartItems { get; set; }
     }
 }

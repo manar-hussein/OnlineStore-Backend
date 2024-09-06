@@ -1,4 +1,4 @@
-﻿using Domain.Entities;
+﻿//
 namespace Application.Interfaces
 {
     public interface IRepository<T> where T :BaseEntity

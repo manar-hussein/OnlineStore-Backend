@@ -5,10 +5,11 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+//
 
 namespace Domain.Models
 {
-    public class SubCategory
+    public class SubCategory : BaseEntity
     {
         [Key]
         public int Id { get; set; }
@@ -20,6 +21,7 @@ namespace Domain.Models
         [ForeignKey("Category")]
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; }
+
         public virtual ICollection<Product>? Products { get; set; }
  
         public DateTime CreatedAt { get; set; }

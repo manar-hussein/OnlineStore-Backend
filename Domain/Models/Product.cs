@@ -1,4 +1,5 @@
-﻿using System;
+﻿//
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Models
 {
-    public class Product
+    public class Product : BaseEntity
     {
         [Key]
         public int Id { get; set; }
@@ -19,15 +20,15 @@ namespace Domain.Models
         [StringLength(300)]
         public string Description { get; set; }
 
-        public int Quantity { get; set; }
+        public float Price {  get; set; }
 
 
         [StringLength(255)]
         public string Cover { get; set; }
 
-        [ForeignKey("Category")]
-        public int CategoryId { get; set; }
-        public Category Category { get; set; }
+        [ForeignKey("SubCategory")]
+        public int SubCategoryId { get; set; }
+        public SubCategory SubCategory { get; set; }
         public DateTime CreatedAt { get; set; }
     }
 }
