@@ -1,4 +1,7 @@
 
+using Application;
+using Microsoft.EntityFrameworkCore;
+
 namespace OnlineStore
 {
     public class Program
@@ -13,9 +16,15 @@ namespace OnlineStore
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddDbContext<APIStoreDbContext>(option =>
+            option.UseSqlServer(builder.Configuration.GetConnectionString("Dev"))
+            );
 
             var app = builder.Build();
-
+            var scope = app.Services.CreateScope();
+            var services = scope.ServiceProvider;
+            var StoreContext = services.GetRequiredService<APIStoreDbContext>();
+            StoreContext.Database.Migrate();
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
