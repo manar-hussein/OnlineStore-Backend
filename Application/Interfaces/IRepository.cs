@@ -1,4 +1,6 @@
 ﻿//
+using Domain.Models;
+
 namespace Application.Interfaces
 {
     public interface IRepository<T> where T :BaseEntity

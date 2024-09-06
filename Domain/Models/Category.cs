@@ -10,14 +10,12 @@ namespace Domain.Models
 {
     public class Category : BaseEntity
     {
-        [Key]
-        public int Id { get; set; }
 
         [StringLength(100)]
-        public string Name{ get; set; }
+        public string Name { get; set; } = null!;
 
         [StringLength(300)]
-        public string Description{ get; set; }
+        public string Description{ get; set; }= null!;
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
         public ICollection<SubCategory>? SubCategory { get; set; }

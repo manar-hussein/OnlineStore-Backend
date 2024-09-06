@@ -12,12 +12,12 @@ namespace Domain.Models
     {
         public int Id { get; set; }
 
-        [ForeignKey("Order")]
+        [ForeignKey(nameof(Order))]
         public int OrderId { get; set; }
         public OrderDetails? Order { get; set; }
 
 
-        [ForeignKey("Product")]
+        [ForeignKey(nameof(Product))]
         public int ProductId { get; set; }
         public Product? Product{ get; set; }
 

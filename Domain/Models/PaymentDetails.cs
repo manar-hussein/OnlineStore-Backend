@@ -1,5 +1,4 @@
-﻿using Domain.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -11,9 +10,7 @@ namespace Domain.Models
 {
     public class PaymentDetails : BaseEntity
     {
-        public int Id { get; set; }
-       
-        [ForeignKey("Order")]
+        [ForeignKey(nameof(Order))]
         public int OrderId { get; set; }
         public OrderDetails? Order { get; set; }
 
@@ -22,7 +19,7 @@ namespace Domain.Models
         public decimal Amount { get; set; }
 
         [StringLength(100)]
-        public string Provider {  get; set; }
+        public string Provider { get; set; } = null!;
         public PaymentStatus Status { get; set; }
         public DateTime CreatedAt { get; set; }
 

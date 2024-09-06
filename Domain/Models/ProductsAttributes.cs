@@ -12,12 +12,12 @@ namespace Domain.Models
     public class ProductsAttributes : BaseEntity
     { 
 
-        [ForeignKey("Product")]
+        [ForeignKey(nameof(Product))]
         public int ProductId { get; set; }
 
-        public virtual Product Product { get; set; }
+        public virtual Product? Product { get; set; }
 
         public ProductsAttributeType Type {  get; set; }
-        public string Value { get; set; } 
+        public string Value { get; set; } = null!;
     }
 }

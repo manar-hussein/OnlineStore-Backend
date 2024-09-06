@@ -11,15 +11,12 @@ namespace Domain.Models
 {
     public class WishList : BaseEntity
     {
-        [Key]
-        public int Id { get; set; }
-
-        [ForeignKey("User")]
+        [ForeignKey(nameof(User))]
         public int UserId { get; set; }
         public User? User { get; set; }
 
 
-        public DateTime DateAdded { get; set; }
+        public DateTime DateAdded { get; set; }= DateTime.UtcNow;
 
         public  ICollection<Product>? Products { get; set; }
 

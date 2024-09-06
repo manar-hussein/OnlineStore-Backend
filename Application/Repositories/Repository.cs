@@ -1,4 +1,5 @@
 ﻿using Application.Interfaces;
+using Domain.Models;
 //
 
 namespace Application.Repositories

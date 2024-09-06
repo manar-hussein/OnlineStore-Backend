@@ -12,19 +12,17 @@ namespace Domain.Models
 {
     public class OrderDetails : BaseEntity
     {
-        [Key]
-        public int Id { get; set; }
-
-        [ForeignKey("User")]
+        
+        [ForeignKey(nameof(User))]
         public int  UserId { get; set; }
         public User? User { get; set; } 
 
         
-        [ForeignKey("Payment")]
+        [ForeignKey(nameof(Payment))]
         public int  PaymentId { get; set; }
         public PaymentDetails? Payment {  get; set; }
 
-        public ICollection<OrderItem> OrderItems {  get; set; }
+        public ICollection<OrderItem>? OrderItems {  get; set; }
 
         [Column(TypeName = "decimal(18,2)")]
         public decimal Total { get; set; }

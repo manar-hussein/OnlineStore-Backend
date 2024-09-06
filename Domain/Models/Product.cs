@@ -11,24 +11,22 @@ namespace Domain.Models
 {
     public class Product : BaseEntity
     {
-        [Key]
-        public int Id { get; set; }
-
         [StringLength(100)]
-        public string Name { get; set; }
+        public string Name { get; set; } = null!;
 
         [StringLength(300)]
-        public string Description { get; set; }
+        public string Description { get; set; }=null!;
 
         public float Price {  get; set; }
 
 
         [StringLength(255)]
-        public string Cover { get; set; }
+        public string Cover { get; set; } = null!;
 
-        [ForeignKey("SubCategory")]
+        [ForeignKey(nameof(SubCategory))]
         public int SubCategoryId { get; set; }
-        public SubCategory SubCategory { get; set; }
+        public SubCategory? SubCategory { get; set; }
+        public int Quantity { get; set; }
         public DateTime CreatedAt { get; set; }
     }
 }

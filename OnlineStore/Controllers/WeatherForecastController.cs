@@ -1,4 +1,5 @@
 //
+using Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace OnlineStore.Controllers
@@ -35,7 +36,7 @@ namespace OnlineStore.Controllers
 
         [HttpGet("All")]
         public IActionResult Get(int id) {
-          var order=_uniteOfWork.Repository<Order>().GetById(id);
+          var order=_uniteOfWork.Repository<Category>().GetById(id);
             return Ok(order);
         }
     }
